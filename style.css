@@ -1,0 +1,262 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+
+    background:linear-gradient(135deg,#4facfe,#00f2fe);
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+}
+
+.container{
+
+    width:100%;
+
+    max-width:650px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.2);
+
+}
+
+h1{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+.input-area{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.input-area input{
+
+    flex:1;
+
+    padding:15px;
+
+    border:2px solid #ddd;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:16px;
+
+}
+
+.input-area button{
+
+    padding:15px 25px;
+
+    border:none;
+
+    background:#4facfe;
+
+    color:white;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.input-area button:hover{
+
+    background:#1976d2;
+
+}
+
+.filters{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin:20px 0;
+
+}
+
+.filters button{
+
+    padding:8px 20px;
+
+    border:none;
+
+    background:#ddd;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+}
+
+.filters button.active{
+
+    background:#4facfe;
+
+    color:white;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+li{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px;
+
+    background:#f7f7f7;
+
+    margin-bottom:12px;
+
+    border-radius:10px;
+
+    animation:fade .3s;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(10px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.completed{
+
+    text-decoration:line-through;
+
+    color:gray;
+
+}
+
+.actions button{
+
+    margin-left:5px;
+
+    border:none;
+
+    padding:8px 12px;
+
+    cursor:pointer;
+
+    border-radius:6px;
+
+}
+
+.edit{
+
+    background:orange;
+
+    color:white;
+
+}
+
+.delete{
+
+    background:red;
+
+    color:white;
+
+}
+
+.complete{
+
+    background:green;
+
+    color:white;
+
+}
+
+.footer{
+
+    text-align:center;
+
+    margin-top:20px;
+
+    font-weight:bold;
+
+}
+
+@media(max-width:600px){
+
+.input-area{
+
+flex-direction:column;
+
+}
+
+.input-area button{
+
+width:100%;
+
+}
+
+.filters{
+
+flex-wrap:wrap;
+
+}
+
+li{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:10px;
+
+}
+
+}
