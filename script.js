@@ -4,7 +4,13 @@ const taskList=document.getElementById("taskList");
 const count=document.getElementById("taskCount");
 const filters=document.querySelectorAll(".filter");
 
-let tasks=JSON.parse(localStorage.getItem("tasks"))||[];
+let tasks=[];
+try {
+    tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+} catch (error) {
+    tasks = [];
+    localStorage.removeItem("tasks");
+}
 
 let currentFilter="all";
 
@@ -37,16 +43,18 @@ return true;
 filtered.forEach((task,index)=>{
 
 let li=document.createElement("li");
+if (task.completed) {
+    li.classList.add("completed");
+}
+
+let taskText=document.createElement("div");
+taskText.className="task-text";
 
 let text=document.createElement("span");
-
 text.innerText=task.text;
 
-if(task.completed)
-
-text.classList.add("completed");
-
-li.appendChild(text);
+taskText.appendChild(text);
+li.appendChild(taskText);
 
 let actions=document.createElement("div");
 
