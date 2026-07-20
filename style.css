@@ -13,6 +13,12 @@ body {
     padding: 24px;
     background: radial-gradient(circle at top left, #72d5ff 0%, #5b4cff 35%, #171843 100%);
     color: #111;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+body.dark-mode {
+    background: radial-gradient(circle at top left, #1d2a53 0%, #0c1328 50%, #050814 100%);
+    color: #f5f8ff;
 }
 
 .container {
@@ -26,11 +32,45 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.55);
 }
 
+body.dark-mode .container {
+    background: rgba(13, 20, 40, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
 h1 {
     font-size: clamp(2rem, 3vw, 2.8rem);
     text-align: center;
-    margin-bottom: 18px;
     color: #1f2a56;
+}
+
+body.dark-mode h1 {
+    color: #f5f8ff;
+}
+
+.theme-toggle {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 22px rgba(79, 172, 254, 0.22);
 }
 
 .description {
@@ -58,6 +98,12 @@ h1 {
     color: #1f2a56;
     background: #f7f9ff;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.dark-mode .input-area input {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f5f8ff;
+    border-color: rgba(255, 255, 255, 0.12);
 }
 
 .input-area input:focus {
@@ -124,6 +170,12 @@ li {
     animation: fade 0.3s ease;
 }
 
+body.dark-mode li {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+}
+
 li .task-text {
     display: flex;
     flex-wrap: wrap;
@@ -136,9 +188,17 @@ li .task-text span {
     color: #252f57;
 }
 
+body.dark-mode li .task-text span {
+    color: #f5f8ff;
+}
+
 .completed .task-text span {
     text-decoration: line-through;
     color: #8d93ae;
+}
+
+body.dark-mode .completed .task-text span {
+    color: #9aa8d2;
 }
 
 .actions {
@@ -201,6 +261,15 @@ li .task-text span {
 }
 
 @media (max-width: 720px) {
+    .topbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .theme-toggle {
+        width: 100%;
+    }
+
     .container {
         padding: 28px;
     }

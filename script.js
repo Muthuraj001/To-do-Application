@@ -3,6 +3,7 @@ const addBtn=document.getElementById("addBtn");
 const taskList=document.getElementById("taskList");
 const count=document.getElementById("taskCount");
 const filters=document.querySelectorAll(".filter");
+const themeToggle=document.getElementById("themeToggle");
 
 let tasks=[];
 try {
@@ -13,6 +14,17 @@ try {
 }
 
 let currentFilter="all";
+let currentTheme=localStorage.getItem("theme") || "light";
+
+function applyTheme(theme){
+
+currentTheme=theme;
+
+document.body.classList.toggle("dark-mode", theme === "dark");
+themeToggle.textContent = theme === "dark" ? "Light Mode" : "Dark Mode";
+localStorage.setItem("theme", theme);
+
+}
 
 function saveTasks(){
 
@@ -175,5 +187,13 @@ renderTasks();
 };
 
 });
+
+themeToggle.onclick=()=>{
+
+applyTheme(currentTheme === "dark" ? "light" : "dark");
+
+};
+
+applyTheme(currentTheme);
 
 renderTasks();
