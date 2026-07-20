@@ -22,7 +22,7 @@ localStorage.setItem("tasks",JSON.stringify(tasks));
 
 function updateCount(){
 
-count.innerText=`${tasks.length} Tasks`;
+count.innerText=`${tasks.length} ${tasks.length === 1 ? 'Task' : 'Tasks'}`;
 
 }
 

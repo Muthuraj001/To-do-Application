@@ -16,17 +16,41 @@
 
 <div class="container">
 
-    <h1>📝 Todo List</h1>
+    <div class="hero-card">
+
+        <div class="hero-copy">
+
+            <span class="eyebrow">Focus mode</span>
+
+            <h1>Organize your day with clarity</h1>
+
+            <p class="description">
+                Capture your next task, mark progress, and keep your goals moving forward in one calm space.
+            </p>
+
+        </div>
+
+        <div class="status-panel">
+
+            <div class="status-pill">Today</div>
+
+            <div class="status-number" id="taskCount">
+                0 Tasks
+            </div>
+
+        </div>
+
+    </div>
 
     <div class="input-area">
 
         <input
         type="text"
         id="taskInput"
-        placeholder="Enter a task">
+        placeholder="What do you want to finish today?">
 
         <button id="addBtn">
-            Add
+            Add Task
         </button>
 
     </div>
@@ -51,14 +75,6 @@
     </div>
 
     <ul id="taskList"></ul>
-
-    <div class="footer">
-
-        <span id="taskCount">
-            0 Tasks
-        </span>
-
-    </div>
 
 </div>
 
